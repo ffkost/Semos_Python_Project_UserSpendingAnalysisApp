@@ -1,0 +1,29 @@
+<!-- templates/high_spending_users.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>High-Spending Users</h1>
+
+    {% if high_spenders %}
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Total Spending ($)</th>
+                <th>Bonus Points</th>
+            </tr>
+            {% for spender in high_spenders %}
+                <tr>
+                    <td>{{ spender.user_id }}</td>
+                    <td>{{ "%.2f"|format(spender.total_spending) }}</td>
+                    <td>{{ spender.bonus_points }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No high-spending users found.</p>
+    {% endif %}
+
+    <div class="nav-link">
+        <a href="/">← Back to Home</a>
+    </div>
+{% endblock %}

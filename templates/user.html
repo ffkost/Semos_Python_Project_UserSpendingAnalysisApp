@@ -1,0 +1,31 @@
+<!-- templates/user.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>User Details</h1>
+
+    {% if user %}
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Total Spending ($)</th>
+            </tr>
+            <tr>
+                <td>{{ user.user_id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ "%.2f"|format(user.total_spending) }}</td>
+            </tr>
+        </table>
+    {% elif error %}
+        <p style="color: #ff6347;">{{ error }}</p>
+    {% endif %}
+
+    <div class="nav-link">
+        <a href="/">← Back to Home</a>
+    </div>
+{% endblock %}

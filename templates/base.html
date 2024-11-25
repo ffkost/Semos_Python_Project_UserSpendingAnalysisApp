@@ -1,0 +1,125 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title if title else "User Spending Analysis App" }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6a0dad; /* Purple background */
+            text-align: center;
+            padding-top: 50px;
+            color: white; /* White text for contrast */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #8e44ad; /* Darker purple for the container */
+            padding: 40px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+        }
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin: 5px 10px 15px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type="number"]:focus, input[type="text"]:focus {
+            border-color: #ff69b4; /* Pink border on focus */
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff69b4; /* Pink buttons */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff85c1; /* Lighter pink on hover */
+        }
+        .average-btn {
+            background-color: #ba55d3; /* Medium purple for the second button */
+            margin-top: 20px;
+        }
+        .average-btn:hover {
+            background-color: #cda4de; /* Lighter purple on hover */
+        }
+        .high-spender-btn {
+            background-color: #ff8c00; /* Orange for high spender button */
+        }
+        .high-spender-btn:hover {
+            background-color: #ffa500; /* Lighter orange on hover */
+        }
+        .view-high-spenders-btn {
+            background-color: #ff69b4; /* Pink for view high spenders button */
+            margin-top: 20px;
+        }
+        .view-high-spenders-btn:hover {
+            background-color: #ff85c1; /* Lighter pink on hover */
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #ffd700; /* Gold color for messages */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #333; /* Dark text for table content */
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #ba55d3; /* Header background */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // JavaScript functions can be added here if needed globally
+    </script>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </div>
+</body>
+</html>

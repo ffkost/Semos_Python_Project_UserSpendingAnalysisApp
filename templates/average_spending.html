@@ -1,0 +1,27 @@
+<!-- templates/average_spending.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Average Spending by Age Group</h1>
+
+    {% if average_spending %}
+        <table>
+            <tr>
+                <th>Age Group</th>
+                <th>Average Spending ($)</th>
+            </tr>
+            {% for age_group, avg in average_spending.items() %}
+                <tr>
+                    <td>{{ age_group }}</td>
+                    <td>{{ "%.2f"|format(avg) }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+
+    <div class="nav-link">
+        <a href="/">← Back to Home</a>
+    </div>
+{% endblock %}
